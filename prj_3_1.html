@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS选择器测试</title>
+		<style>
+			ul.descendant li {
+				color: red;
+			}
+			ul.child > li {
+				color: blue;
+			}
+			ul.child + ul.sibling {
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 测试后代选择器 -->
+		<ul class = 'descendant'>
+			<li>
+				是红色
+				<div>是红色</div>
+			</li>
+			<div>
+				<ul>
+					<li>
+						是红色
+					</li>
+				</ul>
+			</div>
+			不是红色
+		</ul>
+		<!-- 测试子代选择器 -->
+		<ul class = 'child'>
+			<li>
+				是蓝色
+				<div>是蓝色</div>
+			</li>
+			<div>
+				<ul>
+					<li>
+						不是蓝色
+					</li>
+				</ul>
+			</div>
+		</ul>
+		<!-- 测试相邻选择器 -->
+		<ul class = 'sibling'>
+			<li>
+				是绿色
+			</li>
+		</ul>
+		<ul class = 'sibling'>
+			<li>
+				不是绿色
+			</li>
+		</ul>
+</html>
